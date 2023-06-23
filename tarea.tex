@@ -1,0 +1,43 @@
+\documentclass[twocolumn]{article}
+\usepackage{lipsum} % Paquete de ejemplo para generar texto ficticio
+\usepackage{mdframed} % Paquete para crear marcos
+\usepackage[margin=2cm,top=2cm,bottom=2cm]{geometry} % Ajusta los márgenes según tus necesidades
+\usepackage{hyperref}
+\usepackage{abstract}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\title{\bfseries{\fontsize{14}{14}\selectfont \vspace{15pt} \hrule \vspace{15pt} Safe Reinforcement Learning Using Advantage-Based Intervention \vspace{15pt} \hrule \vspace{15pt} \fontsize{10}{13}\selectfont Nolan Wagener \quad Byron Boots \quad Ching-An Cheng}}
+\date{}
+% Definir un nuevo entorno "abstractframe" con un marco sin borde
+\newenvironment{abstractframe}
+{\begin{mdframed}[linewidth=0pt, innerleftmargin=3pt, innerrightmargin=3pt, innerbottommargin=10pt, skipabove=\topsep, skipbelow=\topsep]}
+{\end{mdframed}}
+
+\renewcommand{\abstractnamefont}{\normalfont\fontsize{13}{14}\selectfont\bfseries\centering}
+\begin{document}
+
+\maketitle
+
+
+\begin{abstractframe}
+\begin{abstract}
+{
+  \fontsize{10}{15}\selectfont
+  Many sequential decision problems involve finding a policy that maximizes total reward while obeying safety constraints. Although much recent research has focused on the development of safe reinforcement learning (RL) algorithms that produce a safe policy after training, ensuring safety during training as well remains an open problem. A fundamental challenge is performing exploration while still satisfying constraints in an unknown Markov decision process (MDP). In this work, we address this problem for the chanceconstrained setting. We propose a new algorithm, SAILR, that uses an intervention mechanism based on advantage functions to keep the agent safe throughout training and optimizes the agent’s policy using off-the-shelf RL algorithms designed for unconstrained MDPs. Our method comes with strong guarantees on safety during both training and deployment (i.e., after training and without the intervention mechanism) and policy performance compared to the optimal safetyconstrained policy. In our experiments, we show that SAILR violates constraints far less during training than standard safe RL and constrained MDP approaches and converges to a wellperforming policy that can be deployed safely without intervention. Our code is available at \url{https://github.com/nolanwagener/safe_rl}
+}
+
+ % Texto ficticio de ejemplo para el abstract
+\end{abstract}
+\end{abstractframe}
+
+
+
+\section{Introducción}
+\lipsum[2-4] % Texto ficticio de ejemplo para la sección de introducción
+
+\end{document}
